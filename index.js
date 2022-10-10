@@ -1,4 +1,4 @@
-//RECEITA DE BOLINHO DE CHUVA COM BANANA
+
 
 const express = require("express");
 const { v4: uuidV4 } = require("uuid");
@@ -25,7 +25,7 @@ app.get("/buscar/:email", (req, res) => {
   const index = checkIsEmailExists(email);
   if (index === -1) {
     res.status(404).json({
-      mensagem: "Cliente não encontrado!",
+      mensagem: "Não encontrado!",
     });
   } else {
     res.json({
@@ -64,7 +64,7 @@ app.put("/atualizar/:id", (req, res) => {
 
   if (isExists === -1) {
     return res.status(400).json({
-      mensagem: "Cliente não encontrado",
+      mensagem: "Não encontrado!",
     });
   }
 
@@ -83,7 +83,7 @@ app.delete("/deletar/:id", (req, res) => {
 
   if (isExists === -1) {
     return res.status(400).json({
-      mensagem: "Cliente não encontrado",
+      mensagem: "Não encontrado!",
     });
   }
 
